@@ -5,15 +5,7 @@
 #include<algorithm>
 #include"large_number.h"
 
-int main()
-{
-	large_number a = 1000,b =999,c;
-	c = a-b;
-	c = c * 100;
-	c.print();
-	getchar(); getchar();
-	return 0;
-}
+
 
 void large_number::print()
 {
