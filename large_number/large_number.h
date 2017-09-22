@@ -10,7 +10,7 @@ private:
 	int size;
 	int sign;
 
-	sadasd sdsadsa
+	
 	int do_compare(large_number &b);
 	large_number do_add(large_number &b);
 	large_number do_subtract(large_number &b);
@@ -22,6 +22,9 @@ public:
 	large_number  operator = (string num);
 	large_number  operator =(const int num);
 	large_number operator +(large_number &b);
+	large_number operator +(const int num);
+	large_number operator*(const int num);
+	large_number operator-(const int num);
 	large_number operator -(large_number &b);
 	large_number operator * (large_number &b);	
 	bool operator < (large_number &b);
@@ -31,6 +34,10 @@ public:
 	bool operator >(large_number &b);
 	bool operator !=(large_number &b);
 	large_number operator +=(large_number &b);
+	large_number operator +=(const int num);
+	large_number operator *=(const int num);
+	large_number operator -=(const int num);
+
 	large_number operator *=(large_number &b);
 	large_number operator -=(large_number &b);
 

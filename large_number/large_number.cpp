@@ -301,6 +301,24 @@ large_number large_number::operator+(large_number & b)
 	return ans;
 }
 
+large_number large_number::operator+(const int num)
+{
+	large_number b = num;
+	return *this +b;
+}
+
+large_number large_number::operator*(const int num)
+{
+	large_number b = num;
+	return *this *b;
+}
+
+large_number large_number::operator-(const int num)
+{
+	large_number b = num;
+	return *this -b;
+}
+
 large_number large_number::operator-(large_number & b)
 {
 	large_number ans;
@@ -360,6 +378,27 @@ bool large_number::operator!=(large_number & b)
 large_number large_number::operator+=(large_number & b)
 {
 	*this = *this + b;
+
+	return *this;
+}
+
+large_number large_number::operator+=(const int num)
+{
+	*this = *this + num;
+
+	return *this;
+}
+
+large_number large_number::operator*=(const int num)
+{
+	*this = *this * num;
+
+	return *this;
+}
+
+large_number large_number::operator-=(const int num)
+{
+	*this = *this - num;
 
 	return *this;
 }
