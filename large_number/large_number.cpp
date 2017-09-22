@@ -9,6 +9,7 @@ int main()
 {
 	large_number a = 1000,b =999,c;
 	c = a-b;
+	c = c * 100;
 	c.print();
 	getchar(); getchar();
 	return 0;
@@ -175,23 +176,27 @@ large_number large_number::do_subtract(large_number & b)
 	return ans;
 }
 
-large_number::large_number(int num)
+large_number::large_number(const int num)
 {
 	int i = 0;
+	int n;
 	if (num < 0)
 	{
 		sign = -1;
-		num = -num;
+		n = -num;
 	}
 	else
+	{
 		sign = 1;
+		n = num;
+	}
 	while (true)
 	{
-		if (num == 0)break;
+		if (n == 0)break;
 		i++;
-		int x = num % 10;
+		int x = n % 10;
 		number.push_back(x);
-		num = num / 10;
+		n = n / 10;
 	}
 	size = i;
 }
@@ -253,24 +258,28 @@ large_number large_number::operator=(string num)
 	return *this;
 }
 
-large_number large_number::operator=(int num)
+large_number large_number::operator=(const int num)
 {
 	number.clear();
 	int i = 0;
+	int n;
 	if (num < 0)
 	{
 		sign = -1;
-		num = -num;
+		n = -num;
 	}
 	else
+	{
 		sign = 1;
+		n = num;
+	}
 	while (true)
 	{
-		if (num == 0)break;
+		if (n == 0)break;
 		i++;
-		int x = num % 10;
+		int x = n % 10;
 		number.push_back(x);
-		num = num / 10;
+		n = n / 10;
 	}
 	size = i;
 	return *this;
